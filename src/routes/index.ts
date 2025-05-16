@@ -21,10 +21,15 @@
  * ================================================================
  */
 
-import { Router } from 'express';
+import { Router } from 'express';//application,
 
 // Importa o módulo de rotas dos heróis
 import heroesRouter from './heroes.routes';
+import piusRouter from './pius.routes';
+import usersRouter from './users.routes';
+
+
+import { ro } from 'date-fns/locale';
 
 const routes = Router();
 
@@ -40,6 +45,11 @@ const routes = Router();
  */
 
 routes.use('/heroes', heroesRouter);
+routes.use('/user', usersRouter);
+routes.use('/user', usersRouter);
+routes.use('/pius', piusRouter);
+
+
 
 // Exporta o roteador para ser usado no servidor principal
 export default routes;
